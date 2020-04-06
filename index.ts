@@ -2,18 +2,26 @@ import crypto from 'crypto'
 import OAuth from 'oauth-1.0a'
 import axios, { AxiosResponse } from 'axios'
 
-export class Twitter {
+export interface TwitterCredentials {
+  consumerKey: string;
+  consumerSecret: string;
+  accessToken?: string;
+  accessTokenSecret?: string;
+}
+
+export class TwitterClient {
 
   public baseUrl = 'https://api.twitter.com/'
-  public token = { key: '', secret: '' }
+  public creds: TwitterCredentials
 
-  constructor (consumerKey: string, consumerSecret: string) {
+  constructor (creds: TwitterCredentials) {
+    this.creds = creds
     const oauth = new OAuth({
       consumer: {
-        key: consumerKey,
-        secret: consumerSecret
+        key: creds.consumerKey,
+        secret: creds.consumerSecret
       },
-      signature_method: 'HMAC-SHA1',  //eslint-disable-line @typescript-eslint/camelcase
+      signature_method: 'HMAC-SHA1',             //eslint-disable-line @typescript-eslint/camelcase
       hash_function (baseString, key): string {  //eslint-disable-line @typescript-eslint/camelcase
         return crypto.createHmac('sha1', key).update(baseString).digest('base64')
       }
@@ -23,7 +31,10 @@ export class Twitter {
         url: `${config.baseURL}${config.url}`,
         method: config.method || 'GET',
         data: config.data
-      }, this.token))
+      }, {
+        key: this.creds.accessToken || '',
+        secret: this.creds.accessTokenSecret || ''
+      }))
       return config
     })
     axios.defaults.baseURL = this.baseUrl
