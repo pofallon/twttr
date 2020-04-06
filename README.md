@@ -1,2 +1,2 @@
 # twttr
-Minimal Twitter API client
+Minimal Twitter API client, based on the sample [twine](https://github.com/pofallon/twine) project created as part of the [Building Command Line Applications in Node.js](https://www.pluralsight.com/courses/node-js-building-command-line-app) Pluralsight course.
