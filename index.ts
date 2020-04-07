@@ -48,6 +48,10 @@ export class TwitterClient {
     return axios.post(api, data)
   }
 
+  put(api: string, data = {}): Promise<AxiosResponse> {
+    return axios.put(api, data)
+  }
+
   delete(api: string): Promise<AxiosResponse> {
     return axios.delete(api)
   }
