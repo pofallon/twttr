@@ -5,6 +5,8 @@ Based on the [twine](https://github.com/pofallon/twine) sample created in the [B
 
 ## Usage
 
+Install with `npm install --save twttr` then:
+
 ```
 const { TwitterClient } = require('twttr')
 
