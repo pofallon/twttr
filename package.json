@@ -24,9 +24,9 @@
     "type": "git",
     "url": "git+https://github.com/pofallon/twttr.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["twitter"],
+  "author": "Paul O'Fallon",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/pofallon/twttr/issues"
   },
