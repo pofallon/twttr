@@ -21,8 +21,8 @@ export class TwitterClient {
         key: creds.consumerKey,
         secret: creds.consumerSecret
       },
-      signature_method: 'HMAC-SHA1',             //eslint-disable-line @typescript-eslint/camelcase
-      hash_function (baseString, key): string {  //eslint-disable-line @typescript-eslint/camelcase
+      signature_method: 'HMAC-SHA1',
+      hash_function (baseString, key): string {
         return crypto.createHmac('sha1', key).update(baseString).digest('base64')
       }
     })
