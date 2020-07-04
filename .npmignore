@@ -1,5 +1,6 @@
 *.ts
 !*.d.ts
+examples
 test
 .eslintrc.js
 jest.config.js
