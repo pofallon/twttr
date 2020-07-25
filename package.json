@@ -1,6 +1,6 @@
 {
   "name": "twttr",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Minimal Twitter API client",
   "main": "index.js",
   "dependencies": {
@@ -8,13 +8,13 @@
     "oauth-1.0a": "^2.2.6"
   },
   "devDependencies": {
-    "@types/node": "^14.0.14",
-    "@typescript-eslint/eslint-plugin": "^3.5.0",
-    "@typescript-eslint/parser": "^3.5.0",
-    "eslint": "^7.4.0",
+    "@types/node": "^14.0.26",
+    "@typescript-eslint/eslint-plugin": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.0",
+    "eslint": "^7.5.0",
     "jest": "^26.1.0",
-    "ts-jest": "^26.1.1",
-    "typescript": "^3.9.6"
+    "ts-jest": "^26.1.3",
+    "typescript": "^3.9.7"
   },
   "scripts": {
     "prebuild": "eslint index.ts",
